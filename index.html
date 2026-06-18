@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MegaBot Pro — Trade Memecoins at Machine Speed</title>
+<meta name="description" content="A quant-grade desktop trading terminal for memecoins across Solana, Monad, BSC, MegaETH, HyperEVM & TON. Bundle, snipe, automate exits — self-custody, zero fees.">
+<meta property="og:title" content="MegaBot Pro — Machine-Speed Memecoin Trading">
+<meta property="og:description" content="The multi-chain trading terminal built for speed, automation, and self-custody.">
+<meta property="og:url" content="https://megabot.space">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- TICKER BAR -->
+<div class="tickerbar">
+  <div class="tickertrack" id="tickerTrack">
+    <span class="tk">SOL <b class="up">$71.49 ▲2.4%</b></span><span class="tk">MON <b class="down">$0.0214 ▼2.4%</b></span><span class="tk">BNB <b class="down">$590.96 ▼3.0%</b></span><span class="tk">ETH <b class="up">$1,747 ▲1.4%</b></span><span class="tk">HYPE <b class="up">$71.59 ▲0.6%</b></span><span class="tk">TON <b class="up">$1.66 ▲0.7%</b></span>
+    <span class="tk">SOL <b class="up">$71.49 ▲2.4%</b></span><span class="tk">MON <b class="down">$0.0214 ▼2.4%</b></span><span class="tk">BNB <b class="down">$590.96 ▼3.0%</b></span><span class="tk">ETH <b class="up">$1,747 ▲1.4%</b></span><span class="tk">HYPE <b class="up">$71.59 ▲0.6%</b></span><span class="tk">TON <b class="up">$1.66 ▲0.7%</b></span>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="brand"><img src="icon.png" alt="MegaBot"><span>MEGABOT<em>PRO</em></span></a>
+  <div class="nav-links" id="navLinks">
+    <a href="#features">Features</a>
+    <a href="#chains">Chains</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#faq">FAQ</a>
+    <a href="https://docs.megabot.space" target="_blank">Docs</a>
+  </div>
+  <div class="nav-right">
+    <div class="lang-dd" id="langSwitch">
+      <button type="button" class="lang-dd-toggle" id="langToggle" aria-haspopup="listbox" aria-expanded="false">
+        <span id="langCurrent">EN</span><span class="lang-caret">▾</span>
+      </button>
+      <div class="lang-dd-menu" id="langMenu" role="listbox">
+        <button type="button" data-lang="en">English</button>
+        <button type="button" data-lang="id">Indonesia</button>
+      </div>
+    </div>
+    <a href="https://x.com/Dodechaedroon" target="_blank" class="btn btn-ghost">Twitter</a>
+    <a href="https://t.me/zack_mega" target="_blank" class="btn btn-ghost">Telegram</a>
+    <button class="btn btn-solid" onclick="openModal()">Get Access</button>
+  </div>
+  <button class="burger" id="burger" aria-label="Menu"><span></span><span></span></button>
+</nav>
+
+<!-- HERO (split) -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="tag"><span class="ping"></span> 6 CHAINS · ONE TERMINAL</div>
+    <h1 id="heroTitle">Trade memecoins at <span class="hl">machine speed.</span></h1>
+    <p class="lead">A quant-grade desktop terminal to launch, snipe, and auto-exit across Solana, Monad, BSC, MegaETH, HyperEVM &amp; TON. Your keys. Zero trade fees.</p>
+    <div class="hero-cta">
+      <button class="btn btn-solid lg" onclick="openModal()">Download Terminal →</button>
+      <a href="https://t.me/zack_mega" target="_blank" class="btn btn-line lg">Talk to us</a>
+    </div>
+    <div class="hero-metrics">
+      <div><b>&lt;50ms</b><span>Execution</span></div>
+      <div><b>0%</b><span>Trade fees</span></div>
+      <div><b>AES-256</b><span>Local keys</span></div>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="shot">
+      <div class="shot-glow"></div>
+      <div class="shot-win">
+        <div class="shot-bar">
+          <span class="sd"></span><span class="sd"></span><span class="sd"></span>
+          <span class="shot-url">app.megabot.space</span>
+          <span class="shot-live"><i></i> LIVE</span>
+        </div>
+        <img src="dashboard-shot.png" alt="MegaBot trading dashboard" class="shot-img" onerror="this.closest('.shot-win').classList.add('noimg')">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CHAINS -->
+<section id="chains" class="chains">
+  <span class="eyebrow">// SUPPORTED NETWORKS</span>
+  <div class="chain-line">
+    <div class="cn"><span class="chain-badge" style="--c:#19FB9B"><img src="chains/solana.svg" alt=""></span> Solana</div>
+    <div class="cn"><span class="chain-badge" style="--c:#836EF9"><img src="chains/monad.svg" alt=""></span> Monad</div>
+    <div class="cn"><span class="chain-badge" style="--c:#F3BA2F"><img src="chains/bsc.svg" alt=""></span> BSC</div>
+    <div class="cn"><span class="chain-badge" style="--c:#7C84F2"><img src="chains/megaeth.svg" alt=""></span> MegaETH</div>
+    <div class="cn"><span class="chain-badge" style="--c:#50D2C1"><img src="chains/hyperevm.svg" alt=""></span> HyperEVM</div>
+    <div class="cn"><span class="chain-badge" style="--c:#29B6FF"><img src="chains/ton.svg" alt=""></span> TON</div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section id="features" class="block">
+  <div class="block-head">
+    <span class="eyebrow">// CAPABILITIES</span>
+    <h2>Everything a memecoin desk needs.</h2>
+    <p>Twelve professional modules, one terminal. Built for speed, automation, and survival.</p>
+  </div>
+  <div class="feat-grid">
+    <div class="feat"><span class="fi">01</span><h3>Atomic Bundler</h3><p>Launch + buy from 20+ wallets in a single block. No front-runners.</p></div>
+    <div class="feat"><span class="fi">02</span><h3>Trading Agent <em>AI</em></h3><p>Autonomous scoring of a live feed with auto entry &amp; exit.</p></div>
+    <div class="feat"><span class="fi">03</span><h3>Smart Sell <em>PRO</em></h3><p>Take-profit ladders, trailing stop, stop loss, graduation triggers.</p></div>
+    <div class="feat"><span class="fi">04</span><h3>Bump Bot <em>NEW</em></h3><p>Curve-aware activity with stealth anti-detection timing.</p></div>
+    <div class="feat"><span class="fi">05</span><h3>Volume Bot <em>NEW</em></h3><p>Organic cross-wallet patterns that dodge wash-trade flags.</p></div>
+    <div class="feat"><span class="fi">06</span><h3>AI Rug Detection <em>AI</em></h3><p>Multi-factor risk scoring blocks rugs before you buy.</p></div>
+    <div class="feat"><span class="fi">07</span><h3>Panic Sell</h3><p>One key dumps every token from every wallet, instantly.</p></div>
+    <div class="feat"><span class="fi">08</span><h3>Mega Sell</h3><p>Sell across wallets, sweep proceeds to one destination.</p></div>
+    <div class="feat"><span class="fi">09</span><h3>Copy Trading</h3><p>Mirror smart-money wallets with custom size ratios.</p></div>
+    <div class="feat"><span class="fi">10</span><h3>Sniper</h3><p>Auto-buy the moment liquidity lands on your targets.</p></div>
+    <div class="feat"><span class="fi">11</span><h3>Stealth Distribute <em>NEW</em></h3><p>Randomized amounts, timing &amp; routes to stay invisible.</p></div>
+    <div class="feat"><span class="fi">12</span><h3>Analytics</h3><p>Full PnL, win rate, CSV export &amp; unified USD value.</p></div>
+  </div>
+</section>
+
+<!-- SPEED BAND -->
+<section class="band">
+  <div class="band-grid">
+    <div><b class="mono">&lt;50<small>ms</small></b><span>Bundle execution</span></div>
+    <div><b class="mono">6</b><span>Chains, one app</span></div>
+    <div><b class="mono">20+</b><span>Wallets per bundle</span></div>
+    <div><b class="mono">24/7</b><span>Automated exits</span></div>
+  </div>
+</section>
+
+<!-- COMPARISON -->
+<section class="block">
+  <div class="block-head">
+    <span class="eyebrow">// WHY MEGABOT</span>
+    <h2>Built different. Priced honest.</h2>
+  </div>
+  <div class="cmp">
+    <div class="cmp-row cmp-h"><span></span><span class="us">MegaBot Pro</span><span class="them">Others</span></div>
+    <div class="cmp-row"><span>Trade fees</span><span class="us">0% — none</span><span class="them">0.5–1% per trade</span></div>
+    <div class="cmp-row"><span>Key custody</span><span class="us">Local, AES-256</span><span class="them">Stored on servers</span></div>
+    <div class="cmp-row"><span>Updates</span><span class="us">All included</span><span class="them">Sold separately</span></div>
+    <div class="cmp-row"><span>Coverage</span><span class="us">6 chains</span><span class="them">Single platform</span></div>
+    <div class="cmp-row"><span>Exits</span><span class="us">Smart + Trailing + Panic</span><span class="them">Basic stop loss</span></div>
+    <div class="cmp-row"><span>Stealth</span><span class="us">Anti-detection</span><span class="them">Easily tracked</span></div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing" class="block">
+  <div class="block-head">
+    <span class="eyebrow">// PRICING</span>
+    <h2>One terminal. Four tiers.</h2>
+    <p>No per-trade commission. No hidden fees. Pay in SOL or USDC.</p>
+  </div>
+  <div class="price-grid">
+    <div class="pc">
+      <div class="pc-name">STARTER</div><div class="pc-amt">$49<span>/mo</span></div>
+      <ul><li>Bundler (5 wallets)</li><li>Bump &amp; Volume Bot</li><li>Panic Sell</li><li>1 wallet group</li><li>Basic analytics</li></ul>
+      <button class="btn btn-line full" onclick="openModal()">Get Starter</button>
+    </div>
+    <div class="pc hot">
+      <div class="pc-badge">MOST POPULAR</div>
+      <div class="pc-name">PRO</div><div class="pc-amt">$149<span>/mo</span></div>
+      <ul><li>Unlimited wallets</li><li>Smart Bump &amp; Volume</li><li>Smart Sell (all triggers)</li><li>Copy Trading + AI Rug</li><li>Mega Sell</li><li>Full analytics</li></ul>
+      <button class="btn btn-solid full" onclick="openModal()">Get Pro</button>
+    </div>
+    <div class="pc">
+      <div class="pc-name">ELITE</div><div class="pc-amt">$349<span>/mo</span></div>
+      <ul><li>Everything in Pro</li><li>Stealth Distribute</li><li>GPU Vanity Mining</li><li>Trading Agent (AI)</li><li>Priority support + API</li></ul>
+      <button class="btn btn-line full" onclick="openModal()">Get Elite</button>
+    </div>
+    <div class="pc gold">
+      <div class="pc-badge g">BEST VALUE</div>
+      <div class="pc-name">LIFETIME</div><div class="pc-amt">$999<span>once</span></div>
+      <ul><li>Everything in Elite</li><li>Lifetime updates</li><li>No monthly fees</li><li>Founding member + VIP</li><li>Direct dev access</li></ul>
+      <button class="btn btn-solid full" onclick="openModal()">Get Lifetime</button>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="block narrow">
+  <div class="block-head"><span class="eyebrow">// FAQ</span><h2>Questions, answered.</h2></div>
+  <div class="faqs">
+    <details open><summary>What is MegaBot Pro?</summary><p>A desktop trading terminal for memecoins across six chains — bundlers, bots, smart exits, copy trading, AI rug detection, and more in one app built for speed and self-custody.</p></details>
+    <details><summary>Is my private key safe?</summary><p>Yes. Keys are AES-256 encrypted and stored locally on your device. They never leave your machine.</p></details>
+    <details><summary>Which platforms are supported?</summary><p>Solana (Pump.fun, Bags.fm, Raydium, Meteora, Jupiter), Monad (Nad.fun), BSC (four.meme), MegaETH (Kumbaya), HyperEVM (HyperSwap), and TON (StonFi, DeDust).</p></details>
+    <details><summary>Do I need a paid RPC?</summary><p>No. Free RPCs work. Add a few endpoints per chain for the best speed and failover.</p></details>
+    <details><summary>How do I pay?</summary><p>SOL or USDT/USDC. Contact us on Telegram after choosing a plan for details.</p></details>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <h2>Stop trading on a knife's edge.</h2>
+  <p>Join the traders running MegaBot across six chains.</p>
+  <div class="hero-cta center">
+    <button class="btn btn-solid lg" onclick="openModal()">Download Terminal →</button>
+    <a href="https://t.me/zack_mega" target="_blank" class="btn btn-line lg">Join Telegram</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-grid">
+    <div class="foot-brand">
+      <a href="#" class="brand"><img src="icon.png" alt="MegaBot"><span>MEGABOT<em>PRO</em></span></a>
+      <p>The multi-chain memecoin trading terminal. Built for speed, automation, and self-custody.</p>
+    </div>
+    <div class="foot-col"><h4>Product</h4><a href="#features">Features</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a></div>
+    <div class="foot-col"><h4>Resources</h4><a href="https://docs.megabot.space" target="_blank">Docs</a><a href="https://docs.megabot.space#security" target="_blank">Security</a></div>
+    <div class="foot-col"><h4>Community</h4><a href="https://t.me/zack_mega" target="_blank">Telegram</a><a href="https://x.com/Dodechaedroon" target="_blank">Twitter</a><a href="https://discord.gg/megabot" target="_blank">Discord</a></div>
+  </div>
+  <div class="foot-bottom"><span>© 2024–2026 MegaBot Pro</span><span class="muted">Crypto trading involves risk. Trade responsibly.</span></div>
+</footer>
+
+<!-- MODAL -->
+<div id="modal" class="modal" onclick="if(event.target===this)closeModal()">
+  <div class="modal-box">
+    <button class="modal-x" onclick="closeModal()">×</button>
+    <img src="logo.png" alt="MegaBot" class="modal-logo">
+    <h3>Get MegaBot Pro</h3>
+    <p>Contact us to activate your license. After payment you'll receive a download link for Windows or macOS.</p>
+    <a href="https://t.me/zack_mega" target="_blank" class="btn btn-solid full">Contact on Telegram</a>
+  </div>
+</div>
+
+<script src="script.js"></script>
+<script src="i18n.js"></script>
+</body>
+</html>
